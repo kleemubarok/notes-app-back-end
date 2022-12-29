@@ -1,3 +1,5 @@
 # Dependency directories
 node_modules/
-notes-api-webserver.pem
+notes-api-webserver.pe,
+.env
+.prod.env
