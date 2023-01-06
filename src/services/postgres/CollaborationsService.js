@@ -35,8 +35,6 @@ class CollaborationsService {
   }
 
   async verifyCollaborator(noteId, userId) {
-    console.log('verifyColab');
-    console.log(`verifyColab-${noteId}-${userId}`);
     const query = {
       text: 'SELECT * FROM collaborations WHERE note_id = $1 AND user_id = $2',
       values: [noteId, userId],

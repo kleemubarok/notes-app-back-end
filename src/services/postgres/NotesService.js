@@ -95,7 +95,6 @@ class NotesService {
       throw new NotFoundError('Resource yang Anda minta tidak ditemukan');
     }
     const note = result.rows[0];
-    console.log('verifNoteOwn..');
 
     if (note.owner !== owner) {
       throw new AuthorizationError('Anda tidak berhak mengakses resource ini');
@@ -110,8 +109,6 @@ class NotesService {
         throw error;
       }
       try {
-        console.log('try2 - verifNoteAcc..');
-
         await this._collaborationService.verifyCollaborator(noteId, userId);
       } catch {
         throw error;
